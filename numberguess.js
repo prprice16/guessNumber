@@ -47,6 +47,10 @@ function checkGuess(){
         message = "Sorry, out of turns.  The number was " + pickedNumber;
         document.getElementById("start").disabled = false;
     }
+    else if (count < maxTries && !gameover){
+        //tell me how many tries are left
+        document.getElementById("count").textContent = (maxTries - count) + " tries left";
+    }
 
     
     //display message of "correct" or "not correct"
@@ -63,6 +67,7 @@ function newGame(){
     //reset variables
     count = 0;
     gameover = false;
+    document.getElementById("count").textContent = "";
 
     
 }
